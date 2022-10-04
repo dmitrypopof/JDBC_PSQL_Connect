@@ -1,11 +1,11 @@
 /*
-Для Intellij IDE:
-   1. скачать драйвер JDBC https://jdbc.postgresql.org/download.html
-   2. Добавить скачанный драйвер в проект: File -> Project Structure -> Modules -> Dependencies -> Add ->Jars or ...-> выбрать
-   3. Русские буквы - поменяйте значение в параметрах "Global encoding:" и "Project encoding:"
-   на "Default" (параметры располагаются в Intellij idea по пути File->Settings->Editor->File encodings)
+Р”Р»СЏ Intellij IDE:
+   1. СЃРєР°С‡Р°С‚СЊ РґСЂР°Р№РІРµСЂ JDBC https://jdbc.postgresql.org/download.html
+   2. Р”РѕР±Р°РІРёС‚СЊ СЃРєР°С‡Р°РЅРЅС‹Р№ РґСЂР°Р№РІРµСЂ РІ РїСЂРѕРµРєС‚: File -> Project Structure -> Modules -> Dependencies -> Add ->Jars or ...-> РІС‹Р±СЂР°С‚СЊ
+   3. Р СѓСЃСЃРєРёРµ Р±СѓРєРІС‹ - РїРѕРјРµРЅСЏР№С‚Рµ Р·РЅР°С‡РµРЅРёРµ РІ РїР°СЂР°РјРµС‚СЂР°С… "Global encoding:" Рё "Project encoding:"
+   РЅР° "Default" (РїР°СЂР°РјРµС‚СЂС‹ СЂР°СЃРїРѕР»Р°РіР°СЋС‚СЃСЏ РІ Intellij idea РїРѕ РїСѓС‚Рё File->Settings->Editor->File encodings)
  */
-                                                // ПРОВЕРКА ПОДКЛЮЧЕНИЯ К БД
+                                                // РџР РћР’Р•Р РљРђ РџРћР”РљР›Р®Р§Р•РќРРЇ Рљ Р‘Р”
 import java.sql.Connection;
 import java.sql.DriverManager;
 public class Connect_db
@@ -13,11 +13,11 @@ public class Connect_db
 {
     public static void main(String[] args)
     {
-        Connection connection=null; // создаем объект подключения
+        Connection connection=null; // СЃРѕР·РґР°РµРј РѕР±СЉРµРєС‚ РїРѕРґРєР»СЋС‡РµРЅРёСЏ
 
         try {
-            Class.forName("org.postgresql.Driver"); // зарегистрируем тип БД, в нашем случае PSQL. Подгрузит драйвер, который мы импортировали
-            connection= DriverManager.getConnection("jdbc:postgresql://localhost:5432/demo","postgres","1234"); // вызываем класс диспетчера get.connection и учетные данные БД - имя сервера(локалхост),имя БД, пользователь, пароль
+            Class.forName("org.postgresql.Driver"); // Р·Р°СЂРµРіРёСЃС‚СЂРёСЂСѓРµРј С‚РёРї Р‘Р”, РІ РЅР°С€РµРј СЃР»СѓС‡Р°Рµ PSQL. РџРѕРґРіСЂСѓР·РёС‚ РґСЂР°Р№РІРµСЂ, РєРѕС‚РѕСЂС‹Р№ РјС‹ РёРјРїРѕСЂС‚РёСЂРѕРІР°Р»Рё
+            connection= DriverManager.getConnection("jdbc:postgresql://localhost:5432/demo","postgres","1234"); // РІС‹Р·С‹РІР°РµРј РєР»Р°СЃСЃ РґРёСЃРїРµС‚С‡РµСЂР° get.connection Рё СѓС‡РµС‚РЅС‹Рµ РґР°РЅРЅС‹Рµ Р‘Р” - РёРјСЏ СЃРµСЂРІРµСЂР°(Р»РѕРєР°Р»С…РѕСЃС‚),РёРјСЏ Р‘Р”, РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ, РїР°СЂРѕР»СЊ
 
             if (connection!=null)	{
                 System.out.println("Connection OK");
