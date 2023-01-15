@@ -1,18 +1,17 @@
 package Commands_database;
 
+import static Setting_connection_data.ConnectionData.*;
+
 import java.sql.*;
 import java.util.Arrays;
 
 public class Read_command {
     public void ReadFromAirports() throws ClassNotFoundException, SQLException {
-        String url = "jdbc:postgresql://localhost:5432/test_db";// зарегистрируем тип БД, в нашем случае PSQL. Подгрузит драйвер, который мы импортировали. Вписать IP-адрес:порт/имя базы данных
-        String uname = "postgres"; // пользователь
-        String pass = "1234"; // пароль пользователя
         String query_sql = "SELECT * FROM airports;"; // запрос который хотим выполнять
 
         // Создаем заявление в БД:
-        Class.forName("org.postgresql.Driver"); // загрузка драйвера
-        Connection con = DriverManager.getConnection(url, uname, pass); // подключаемся
+        Class.forName(DRIVER_JDBC_PSQL); // загрузка драйвера
+        Connection con = DriverManager.getConnection(URL_PSQL, USER_PSQL, PASSWORD_USER_PSQL); // подключаемся
         Statement st = con.createStatement();// создать заявку
         ResultSet rs = st.executeQuery(query_sql);	//запрос executeQuery для чтения с БД
 
